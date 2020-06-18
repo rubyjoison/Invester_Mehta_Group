@@ -1,0 +1,82 @@
+<!-- <div class="form-group form-inline">Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="countryService.searchTerm" /><span class="ml-3" *ngIf="countryService.loading$ | async">Loading...</span></div>-->
+<div class="card">
+  <h3 class="card-header text-center font-weight text py-2">Submit Verification Details</h3>
+  <div class="card-body">
+
+    <div class="form-group">
+      <label >Fund Manager :</label>&nbsp;
+      <label>Blackstone Group</label>        
+    </div>
+
+    <div class="form-group">
+      <label >Fund Refernce ID : BLKS-FND-1004532</label>&nbsp;
+      <label>{{fundRequestDetails.fundReference}}</label>        
+    </div>
+    <hr />         
+   
+
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Organization Name</label>
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="Enter Company Name" class="form-control input-md"
+          required="" [(ngModel)]="profileCreateDetails.name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Tax ID</label>
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="Enter Company Name" class="form-control input-md"
+          required="" [(ngModel)]="profileCreateDetails.taxId">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Date of Incorporation</label>
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="date" placeholder="Date of Incorporation"
+          class="form-control input-md" required="" [(ngModel)]="profileCreateDetails.inBusinessSince">
+      </div>
+    </div>
+
+    <h6 class="font-weight text py-1 d-flex align-items-left justify-content-left h-100">Primary Address Information</h6>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Address 1</label>
+      <div class="col-md-4">
+        <input class="form-control input-md" id="textinput" name="textinput" type="text"
+          [(ngModel)]="profileCreateDetails.address1">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Address 2</label>
+      <div class="col-md-4">
+        <input class="form-control input-md" id="textarea" name="textarea" [(ngModel)]="profileCreateDetails.address2">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Address 3</label>
+      <div class="col-md-4">
+        <textarea class="form-control input-md" id="textarea" name="textarea"
+          [(ngModel)]="profileCreateDetails.address3"></textarea>
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <div class="form-row">
+    <button type="button" class="btn btn-md btn-block btn-primary col-md-1" (click)="createVerification()">Submit</button>
+    &nbsp;&nbsp;&nbsp;
+    <button type="button" class="btn btn-md btn-outline-dark" (click)="cancelFundRequest()">Cancel</button>
+</div>
+
+  </div>
+  
+    
+   
+
+  </div>
+
+</div>

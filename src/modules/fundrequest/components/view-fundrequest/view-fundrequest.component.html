@@ -1,0 +1,77 @@
+<!-- <div class="form-group form-inline">Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="countryService.searchTerm" /><span class="ml-3" *ngIf="countryService.loading$ | async">Loading...</span></div>-->
+<div class="card">
+  <h4 class="card-header text-center font-weight text py-2">View Fund Requests</h4>
+  <div class="card-body">
+
+    <div class="form-group">
+    </div>
+    <div class="form-group">
+
+      <div class="form-row">
+        <button type="button" class="btn btn-md btn-block btn-primary col-md-2" (click)="createFundRequest()">New Fund
+          Request</button>
+      </div>
+    </div>
+
+   
+    <div class="table-responsive mdbTable">
+      <table class="table table-striped table-hover table-sm">
+        <caption>Fund Requests List</caption>
+        <thead>
+          <tr>
+            <th colspan="25" scope="col">Company Name</th>
+            <th colspan="25" scope="col">Fund Manager</th>
+            <th colspan="25" scope="col">Fund Refernce ID</th>
+            <th colspan="25" scope="col">Status</th>
+            <th colspan="25" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fundrequest of FundRequests; let i = index">
+            <td colspan="25">
+              Mehta Group Investments LLC
+            </td>
+            <td colspan="25">
+              Blackstone Group
+            </td>
+            <td colspan="25">
+              BLKS-FND-1004532
+            </td>
+            <td colspan="25">
+              <a routerLink='/fundrequest/submitverification' type="link">{{fundrequest.status}}</a>
+
+            </td>
+            <td colspan="20">
+              <a routerLink='/fundrequest/updatefundrequest' type="link" (click)="addDocumentValue()">View</a>
+
+            </td>
+          </tr>
+          <tr>
+
+
+            <td colspan="25">
+              {{fundrequest.companyName}}
+
+            </td>
+            <td colspan="25">
+              {{fundrequest.publicEntity}}
+            </td>
+
+            <td colspan="25">
+              {{fundrequest.fundReference}}
+            </td>
+            <td colspan="25">
+              <a routerLink='/fundrequest/submitverification' type="link">{{fundrequest.status}}</a>
+            </td>
+
+            <td colspan="25">
+              <a routerLink='/fundrequest/updatefundrequest' type="link" (click)="addDocumentValue()"></a>
+              <!--  <a routerLink='/fundrequest/updatefundrequest' type="link">Delete</a>-->
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,201 @@
+<!-- <div class="form-group form-inline">Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="countryService.searchTerm" /><span class="ml-3" *ngIf="countryService.loading$ | async">Loading...</span></div>-->
+<div class="card">
+  <h4 class="card-header text-center font-weight text py-2">Verification Info List</h4>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label>Fund Manager : Blackstone Group</label>&nbsp;
+      <label>{{profileCreateDetails.emailId}}</label>
+      <!-- <div class="form-control-static col-sm-7">
+        <label>1123</label>
+      </div>-->
+    </div>
+
+    <div class="form-group">
+      <label>Fund Reference ID : BLKS-FND-1004532</label>&nbsp;
+      <label>{{profileCreateDetails.address1}}</label>
+      <!-- <div class="form-control-static col-sm-7">
+        <label>1123</label>
+      </div>-->
+    </div>
+
+   
+    <div class="table-responsive mdbTable">
+      <table class="table table-striped table-hover table-sm">
+        <caption>Verification Data List</caption>
+        <thead>
+          <tr>
+            <th colspan="20" scope="col">Select</th>
+            <th colspan="25" scope="col">Verification Data</th>
+            <th colspan="25" scope="col">Verification Proof Required</th>
+            <th colspan="30" scope="col">Verification Proof List</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="20">
+              <div class="col-md-8">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              </div>
+            </td>
+            <td colspan="25">
+              Organization Name
+
+            </td>
+            <td colspan="25">
+              Yes
+            </td>
+
+            <td colspan="30">
+              <div class="col-md-8">
+                <select formControlName="website" class="form-control">
+                  <option disabled>Verification Proof</option>
+                  <option>FIDid Data</option>
+                  <option>Incorporation Letter</option>
+                  <option *ngFor="let web of websiteList">{{web}}</option>
+                </select>
+              </div>
+            </td>
+
+
+          </tr>
+          <tr>
+            <td colspan="20">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            </td>
+            <td colspan="25">
+              Tax ID
+
+            </td>
+            <td colspan="25">
+              Yes
+            </td>
+
+            <td colspan="30">
+              <div class="col-md-8">
+                <select formControlName="website" class="form-control">
+                  <option disabled>Verification Proof</option>
+                  <option>FIDid Data</option>
+                  <option>Incorporation Letter</option>
+                  <option *ngFor="let web of websiteList">{{web}}</option>
+                </select>
+              </div>
+            </td>
+
+
+          </tr>
+          <tr>
+            <td colspan="20">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            </td>
+
+            <td colspan="25">
+              Date of Incorporation
+
+            </td>
+            <td colspan="25">
+              Yes
+            </td>
+
+            <td colspan="30">
+              <div class="col-md-8">
+                <select formControlName="website" class="form-control">
+                  <option disabled>Verification Proof</option>
+                  <option>FIDid Data</option>
+                  <option>Incorporation Letter</option>
+                  <option *ngFor="let web of websiteList">{{web}}</option>
+                </select>
+              </div>
+            </td>
+
+
+          </tr>
+          <tr>
+            <td colspan="20">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            </td>
+            <td colspan="25">
+              Primary Address
+            </td>
+            <td colspan="25">
+              Yes
+            </td>
+
+            <td colspan="30">
+              <div class="col-md-8">
+                <select formControlName="website" class="form-control">
+                  <option disabled>Verification Proof</option>
+                  <option>FIDid Data</option>
+                  <option>Incorporation Letter</option>
+                  <option *ngFor="let web of websiteList">{{web}}</option>
+                </select>
+              </div>
+            </td>
+
+
+          </tr>
+          <tr>
+            <td colspan="20">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            </td>
+            <td colspan="25">
+              Contact Number
+
+            </td>
+            <td colspan="25">
+              Yes
+            </td>
+
+            <td colspan="30">
+              <div class="col-md-8">
+                <select formControlName="website" class="form-control">
+                  <option disabled>Verification Proof</option>
+                  <option>FIDid Data</option>
+                  <option>Incorporation Letter</option>
+                  <option *ngFor="let web of websiteList">{{web}}</option>
+                </select>
+              </div>
+            </td>
+
+
+          </tr>
+          <tr>
+            <td colspan="20">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            </td>
+            <td colspan="25">
+              Incorporation Letter
+
+            </td>
+            <td colspan="25">
+              Yes
+            </td>
+
+            <td colspan="30">
+              <div class="col-md-8">
+                <select formControlName="website" class="form-control">
+                  <option disabled>Verification Proof</option>
+                  <option>FIDid Data</option>
+                  <option>Incorporation Letter</option>
+                  <option *ngFor="let web of websiteList">{{web}}</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="form-group">
+      <div class="form-row">
+        <button type="button" class="btn btn-md btn-block btn-primary col-md-1"
+          (click)="createFundRequest()">Submit</button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-md btn-outline-dark" (click)="cancelFundRequest()">Cancel</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

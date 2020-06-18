@@ -1,0 +1,197 @@
+<div class="card">
+  <h4 class="card-header text-center font-weight text py-2">Company Profile</h4>
+  <div class="card-body">
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Contact Type</label>
+      <div class="col-md-4">
+        <label><input type="radio" name="optradio">Individual</label>
+        &nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="optradio" checked>Organization</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Organization Name</label>      
+      <div class="form-row">
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="Enter Organization Name"
+          class="form-control input-md" required="" [(ngModel)]="profileCreateDetails.name">
+      </div>
+      <div class="col-md-8" *ngIf=showVerified>
+        <img src="assets/img/verified.png" class="img-fluid" >
+        &nbsp;
+        <label>Verified By</label>&nbsp;
+        <label>Blackstone Group &nbsp;(FIDiD : FiDIDRef202006051002)</label>  
+      </div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Tax ID</label>
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="Enter Tax Id" class="form-control input-md"
+          required="" [(ngModel)]="profileCreateDetails.taxId">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Firm Type</label>
+      <div class="col-md-4">
+        <select formControlName="firmType" class="form-control">
+          <option disabled>Select Firm Type</option>
+          <option selected>Venture Capital firm</option>
+          <option>Hedge Fund</option>
+          <option>Public Pension Fund</option>
+          <option>Soverign Wealth Fund</option>
+          <option>Insurance Company</option>
+          <option *ngFor="let web of websiteList">{{web}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Firm Registration ID</label>
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="Enter Registration ID"
+          class="form-control input-md" required="" [(ngModel)]="profileCreateDetails.registrationNo">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Email ID</label>
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="Enter Email ID" class="form-control input-md"
+          required="" [(ngModel)]="profileCreateDetails.emailId">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">In Business Since</label>
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="date" placeholder="Date of Incorporation"
+          class="form-control input-md" required="" [(ngModel)]="profileCreateDetails.inBusinessSince">
+      </div>
+    </div>
+
+    <hr />
+    <h6 class="font-weight text py-1 d-flex align-items-left justify-content-left h-100">Address Information</h6>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Address 1</label>
+      <div class="col-md-4">
+        <input class="form-control input-md" id="textinput" name="textinput" type="text"
+          [(ngModel)]="profileCreateDetails.address1">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Address 2</label>
+      <div class="col-md-4">
+        <input class="form-control input-md" id="textarea" name="textarea" [(ngModel)]="profileCreateDetails.address2">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Address 3</label>
+      <div class="col-md-4">
+        <textarea class="form-control input-md" id="textarea" name="textarea"
+          [(ngModel)]="profileCreateDetails.address3"></textarea>
+      </div>
+    </div>
+    <!--<div class="form-group">
+      <div class="form-row">
+        <label class="col-md-4 control-label" for="textinput">City</label>
+          <div class="col-md-4">
+            <input class="form-control input-md" id="textarea" name="textarea"
+            [(ngModel)]="profileCreateDetails.address1">
+                    </div>
+                    <label class="col-md-4 control-label" for="textinput">City</label>
+                    <div class="col-md-4">
+                      <input class="form-control input-md" id="textarea" name="textarea"
+                      [(ngModel)]="profileCreateDetails.address1">
+                              </div> </div>
+    </div>
+    </div>-->
+
+    <hr />
+    <h6 class="font-weight text py-1 d-flex align-items-left justify-content-left h-100">Contact Details</h6>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Contact Person</label>
+      <div class="col-md-4">
+        <input class="form-control input-md" id="textinput" name="textinput" type="text"
+          [(ngModel)]="profileCreateDetails.contactPerson">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Contact Number</label>
+      <div class="col-md-4">
+        <input class="form-control input-md" id="textarea" name="textarea"
+          [(ngModel)]="profileCreateDetails.contactNumber">
+      </div>
+    </div>
+    <div class="card mb-1" style="width:850px">
+      <h6 class="card-header font-weight text py-1 d-flex align-items-left justify-content-left h-100">Upload Documents
+      </h6>
+      <div class="card-body">
+
+        <div class="table-responsive mdbTable">
+          <div class="table-responsive mdbTable">
+            <table class="table table-striped table-hover table-sm">
+              <caption>List of Documents</caption>
+              <thead>
+                <tr>
+                  <th colspan="25" scope="col">Document Type</th>
+                  <th colspan="25" scope="col">Upload Document</th>
+                  <th colspan="20" scope="col">Status</th>
+                  <th colspan="20" scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let document of documentArray; let i = index">
+                  <td colspan="25">
+                    <select formControlName="website" class="form-control">
+                      <option disabled>Select Document Type</option>
+                      <option>Certificate of Incorporation</option>
+                      <option>Financial statements</option>
+                      <!--  <option *ngFor="let web of websiteList">{{web}}</option>-->
+                    </select>
+                  </td>
+                  <td colspan="25">
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  <th colspan="20" scope="row" [(ngModel)]="document.code">
+                  </th>
+
+                  <td colspan="20">
+                    <button class="btn btn-default" type="button" (click)="deleteDocumentValue(i)">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="25">
+                    <select formControlName="website" class="form-control">
+                      <option disabled>Select Document Type</option>
+                      <option>Certificate of Incorporation</option>
+                      <option>Financial statements</option>
+                      <option *ngFor="let web of websiteList">{{web}}</option>
+                    </select>
+                  </td>
+                  <td colspan="25">
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  </td>
+                  <th colspan="20" scope="row" [(ngModel)]="document.code">
+                  </th>
+                  <td colspan="20">
+                    <button class="btn btn-default" type="button" (click)="addDocumentValue()">Add</button>
+                  </td>
+                  &nbsp;&nbsp;&nbsp;
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-row">
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-md btn-block btn-primary col-md-1"
+          (click)="createUserProfile()">Save</button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-md btn-outline-dark" (click)="cancelFundRequest()">Cancel</button>
+      </div>
+
+    </div>

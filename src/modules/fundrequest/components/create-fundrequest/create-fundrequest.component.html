@@ -1,0 +1,135 @@
+<!-- <div class="form-group form-inline">Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="countryService.searchTerm" /><span class="ml-3" *ngIf="countryService.loading$ | async">Loading...</span></div>-->
+<div class="card" id="fundRequestId" *ngIf=showRequest>
+  <h4 class="card-header text-center font-weight text py-2">Fund Request</h4>
+  <div class="card-body">
+
+    <div class="form-group">
+      <h6 class="text-right font-weight text py-2">{{profileCreateDetails.name}}</h6>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Fund Manager</label>
+      <div class="col-md-4">
+        <select formControlName="website" class="form-control">
+          <option disabled>Select Fund Manager</option>
+          <option>Blackstone Group</option>
+          <option>Bern Capital</option>
+          <option *ngFor="let web of websiteList">{{web}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Fund Reference</label>
+      <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="Enter Fund reference ID"
+          class="form-control input-md" required="true" [(ngModel)]="fundRequestDetails.fundReference">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-md-8 control-label" for="textarea">Request Summary</label>
+      <div class="col-md-8">
+        <textarea aria-setsize="100" class="form-control" id="requestSummary" name="textarea"
+          [(ngModel)]="fundRequestDetails.description"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="form-row">
+        <button type="button" class="btn btn-md btn-block btn-primary col-md-1"
+          (click)="previewFundRequest()">Preview</button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-md btn-outline-dark" (click)="cancelFundRequest()">Cancel</button>
+      </div>
+    </div>
+    </div>
+</div>
+
+<div class="card" id="fundRequestId" *ngIf=showPreviewRequest>
+  <h6 class="card-header text-center font-weight text py-2">Fund Request Preview</h6>
+  <div class="card-body">
+
+    <div class="container">
+      <div class="well">
+          <div class="form-group">
+            <label >From : Mehta Group Investments LLC</label>&nbsp;
+            
+          </div>
+          <hr />
+        
+
+          <div class="form-group">
+            <label>investments@mehtagroupinv.com</label>
+           <!-- <div class="form-control-static col-sm-7">
+              <label>1123</label>
+            </div>-->
+          </div>
+        
+          <div class="form-group">
+            <label>128 South 3rd Street</label>
+           <!-- <div class="form-control-static col-sm-7">
+              <label>1123</label>
+            </div>-->
+          </div>
+          <div class="form-group">
+            <label>Philadelphia</label>
+           <!-- <div class="form-control-static col-sm-7">
+              <label>1123</label>
+            </div>-->
+          </div>
+          <div class="form-group">
+            <label>PA 19106</label>
+           <!-- <div class="form-control-static col-sm-7">
+              <label>1123</label>
+            </div>-->
+          </div>
+          <div class="form-group">
+            <label >Contact Person:</label>&nbsp;
+            <label>Matt Davis</label>
+           <!-- <div class="form-control-static col-sm-7">
+              <label>1123</label>
+            </div>-->
+          </div>
+          <div class="form-group">
+            <label >Contact Number:</label>&nbsp;
+            <label>+1 717-263-6161</label>
+           <!-- <div class="form-control-static col-sm-7">
+              <label>1123</label>
+            </div>-->
+          </div>
+          <hr />
+          <div class="form-group">
+            <label >To :</label>&nbsp;
+            <label>Blackstone Group</label>        
+          </div>
+          <hr />         
+          <div class="form-group">
+            <label >Fund Reference ID :</label>&nbsp;
+            <label>BLKS-FND-1004532</label>        
+          </div>
+          <div class="form-group">
+            <label >Request Summary :</label>&nbsp;
+            <label>{{fundRequestDetails.description}}</label>        
+          </div>
+          <hr />   
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="form-group">
+      <div class="form-row">
+        <button type="button" class="btn btn-md btn-block btn-primary col-md-1"
+          (click)="createFundRequest()">Submit</button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-md btn-outline-dark" (click)="cancelFundRequest()">Cancel</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
